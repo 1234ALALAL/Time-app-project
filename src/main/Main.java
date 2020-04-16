@@ -25,8 +25,6 @@ public class Main implements Runnable{
 		
 		input = new UserInput();
 		window = new Window();
-		//screen = new Screen();
-		//Screen.focus = screen;
 		
 		if (inDeveloperMode){
 			start();
@@ -46,7 +44,7 @@ public class Main implements Runnable{
 			delta += (now - lastTime) / ns;
 			lastTime = now;
 			while (delta >= 1) {
-				Tick.tickAll();
+				Tickable.tickAll();
 				delta--;
 			}
 			if (running)

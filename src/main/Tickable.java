@@ -2,7 +2,7 @@ package main;
 
 import java.util.ArrayList;
 
-public interface Tick {
+public interface Tickable {
 	public static ArrayList<Object> tickers = new ArrayList<>();
 	public static ArrayList<Integer> tickerspriority = new ArrayList<>();
 	
@@ -31,7 +31,7 @@ public interface Tick {
 	
 	public static void tickAll(){
 		for(int n = 0; n<tickers.size(); n++){
-			((Tick) tickers.get(n)).tick();
+			((Tickable) tickers.get(n)).tick();
 		}
 	}
 	
