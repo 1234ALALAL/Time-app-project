@@ -8,6 +8,8 @@ public class Main implements Runnable{
 	public Thread thread;
 	public UserInput input;
 	public Window window;
+	public Graphic mainGraphic;
+	public Task mainTask;
 	
 	
 	//local variables
@@ -44,7 +46,6 @@ public class Main implements Runnable{
 			delta += (now - lastTime) / ns;
 			lastTime = now;
 			while (delta >= 1) {
-				Tickable.tickAll();
 				delta--;
 			}
 			if (running)

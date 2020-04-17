@@ -27,23 +27,29 @@ public abstract class Graphic implements Renderable{
 	public Graphic() {}
 	
 	public int add(Renderable O, double priority){
-		int x;
+		int index;
 		if (subGraphics.size() == 0){
 			subGraphics.add(O);
 			order.add(priority);
-			x = subGraphics.size();
+			index = subGraphics.size();
 		}
 		else if (priority > order.get(subGraphics.size()-1)){
 			subGraphics.add(O);
 			order.add(priority);
-			x = subGraphics.size();
+			index = subGraphics.size();
 		}
 		else {
-			for (x=0; priority>order.get(x); x++);
-			subGraphics.add(x, O); 
-			order.add(x, priority);
+			for (index=0; priority>order.get(index); index++);
+			subGraphics.add(index, O); 
+			order.add(index, priority);
 		}
-		return x;
+		return index;
+	}
+	
+	public void remove(Renderable O) {
+		int index = subGraphics.indexOf(O);
+		order.remove(index);
+		subGraphics.remove(index);
 	}
 	
 	
@@ -53,6 +59,17 @@ public abstract class Graphic implements Renderable{
 		}
 	}
 	
+	public int xrel(double subx) {
+		return x + (int)subx;
+	}
+	
+	public int yrel(double suby) {
+		return x + (int)suby;
+	}
+	
 	public abstract void render(Graphics g);
+	
+	public abstract void close();
+	
 	
 }
