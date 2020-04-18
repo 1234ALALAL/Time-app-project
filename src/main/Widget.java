@@ -74,6 +74,15 @@ public abstract class Widget implements Renderable, Tickable {
 		task.remove(W);
 	}
 	
+	public int xrel(int x) {
+		return graphic.xrel(x);
+	}
+	public int yrel(int y) {
+		return graphic.yrel(y);
+	}
+	
+	
+	
 	private class MyGraphic extends Graphic {
 		public void render(Graphics g) {}
 		public void close() {}

@@ -11,6 +11,7 @@ public class TopScreen extends Widget{
 	
 	public OptionMenu optionMenu;
 	public BannerMenu bannerMenu;
+	public ContentPane contentPane;
 	
 	
 	public TopScreen() {
@@ -19,10 +20,11 @@ public class TopScreen extends Widget{
 		
 		optionMenu = new OptionMenu(this);
 		bannerMenu = new BannerMenu(this);
+		contentPane = new ContentPane(this);
 		
 		this.addW(optionMenu, 1, 1);
 		this.addW(bannerMenu, 0, 0);
-		
+		this.addW(contentPane, 2, 2);
 	}
 
 	public void render(Graphics g) {

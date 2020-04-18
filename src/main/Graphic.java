@@ -10,7 +10,7 @@ public abstract class Graphic implements Renderable{
 	public ArrayList<Renderable> subGraphics = new ArrayList<>();
 	public ArrayList<Double> order = new ArrayList<>();
 	
-	protected int x=0, y=0, width=0, height=0;
+	public int x=0, y=0, width=0, height=0;
 	
 	public Graphic(int x, int y, Graphic parent){
 		this.x = x;
@@ -69,7 +69,7 @@ public abstract class Graphic implements Renderable{
 	}
 	
 	public int yrel(double suby) {
-		return x + (int)suby;
+		return y + (int)suby;
 	}
 	
 	public int getX() {
