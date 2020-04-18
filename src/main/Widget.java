@@ -9,8 +9,10 @@ import java.awt.Graphics;
 
 public abstract class Widget implements Renderable, Tickable {
 	
-	protected Graphic graphic;
-	protected Task task;
+	protected Widget parent;
+	
+	public Graphic graphic;
+	public Task task;
 	
 	
 	public Widget(Graphic graphic, Task task) {
@@ -25,6 +27,11 @@ public abstract class Widget implements Renderable, Tickable {
 		this.task = task;
 		graphic = new MyGraphic();
 	}
+	public Widget(Widget parent) {
+		graphic = new MyGraphic();
+		task = new MyTask();
+		this.parent = parent;
+	}
 	public Widget() {
 		graphic = new MyGraphic();
 		task = new MyTask();
@@ -34,6 +41,8 @@ public abstract class Widget implements Renderable, Tickable {
 	public abstract void render(Graphics g);
 	
 	public abstract void tick();
+	
+	public abstract void close();
 	
 	public void renderSelf(Graphics g) {
 		graphic.renderSelf(g);

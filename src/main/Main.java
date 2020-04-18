@@ -1,5 +1,7 @@
 package main;
 
+import screens.TopScreen;
+
 public class Main implements Runnable{
 	
 	public static Main main;
@@ -8,8 +10,7 @@ public class Main implements Runnable{
 	public Thread thread;
 	public UserInput input;
 	public Window window;
-	public Graphic mainGraphic;
-	public Task mainTask;
+	public Widget topScreen;
 	
 	
 	//local variables
@@ -27,6 +28,7 @@ public class Main implements Runnable{
 		
 		input = new UserInput();
 		window = new Window();
+		topScreen = new TopScreen();
 		
 		if (inDeveloperMode){
 			start();
@@ -46,6 +48,7 @@ public class Main implements Runnable{
 			delta += (now - lastTime) / ns;
 			lastTime = now;
 			while (delta >= 1) {
+				topScreen.tick();
 				delta--;
 			}
 			if (running)

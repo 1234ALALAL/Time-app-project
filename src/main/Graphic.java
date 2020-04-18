@@ -10,7 +10,7 @@ public abstract class Graphic implements Renderable{
 	public ArrayList<Renderable> subGraphics = new ArrayList<>();
 	public ArrayList<Double> order = new ArrayList<>();
 	
-	public int x=0, y=0;
+	protected int x=0, y=0, width=0, height=0;
 	
 	public Graphic(int x, int y, Graphic parent){
 		this.x = x;
@@ -59,12 +59,30 @@ public abstract class Graphic implements Renderable{
 		}
 	}
 	
+	public void setBounds(int x, int y, int width, int height) {
+		this.x = x; this.y = y;
+		this.width = width; this.height = height;
+	}
+	
 	public int xrel(double subx) {
 		return x + (int)subx;
 	}
 	
 	public int yrel(double suby) {
 		return x + (int)suby;
+	}
+	
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y;
+	}
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		return height;
 	}
 	
 	public abstract void render(Graphics g);

@@ -64,10 +64,7 @@ public class Window extends Canvas {
 	
 		Graphics g = buff.getDrawGraphics();
 			
-			g.setColor(Color.BLACK);
-			g.fillRect(0,0, this.getWidth(), this.getHeight());
-			//main.screen.render(g, zoom);
-			//TODO: work out a good way to manage rendering and cycling
+			main.topScreen.render(g);
 			
 		g.dispose();
 		buff.show();
