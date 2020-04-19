@@ -45,7 +45,7 @@ public class OptionMenu extends Widget{
 					opt.graphic.x, 
 					opt.graphic.y + (index-1)*OptionMenu.OPTION_HEIGHT + 20, 
 					opt.graphic.width, 
-					OptionMenu.OPTION_HEIGHT,
+					OptionMenu.OPTION_HEIGHT - 1,
 					new Text(
 							opt.graphic.x + 30, 
 							opt.graphic.y + index*OptionMenu.OPTION_HEIGHT, 
@@ -59,6 +59,10 @@ public class OptionMenu extends Widget{
 			
 		}
 		
+		@Override
+		public void act() {
+			
+		}
 	}
 
 }

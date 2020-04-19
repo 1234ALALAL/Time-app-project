@@ -11,7 +11,8 @@ public class Button extends Widget{
 	
 	private Text text;
 	private Color background;
-	private Color shadow = new Color(255,255,255,30);
+	private Color shadow = new Color(255, 255, 255, 10);
+	private Color clickedBackground = new Color(100, 0, 200);
 	
 	private boolean hover = false;
 	private boolean clicked = false;
@@ -45,6 +46,9 @@ public class Button extends Widget{
 	}
 	
 	protected void renderClicked(Graphics g) {
+		g.setColor(clickedBackground);
+		g.fillRect(graphic.x, graphic.y, graphic.width, graphic.height);
+		text.render(g);
 	}
 	protected void renderHover(Graphics g) {
 		renderNone(g);
