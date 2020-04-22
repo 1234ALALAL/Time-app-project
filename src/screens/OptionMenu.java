@@ -18,10 +18,13 @@ public class OptionMenu extends Widget{
 		super(parent);
 		graphic.setBounds(0, 20, 350, parent.graphic.getHeight());
 		
-		addW(new OptionButton(1, "option 1",this), 0, 0);
-		addW(new OptionButton(2, "option 2",this), 0, 0);
-		addW(new OptionButton(3, "option 3",this), 0, 0);
-		addW(new OptionButton(4, "option 4",this), 0, 0);
+		addW(new OptionButton(1, "DashBoard",this), 0, 0);
+		addW(new OptionButton(2, "Calendar",this), 0, 0);
+		addW(new OptionButton(3, "Schedular",this), 0, 0);
+		addW(new OptionButton(4, "Manager",this), 0, 0);
+		addW(new OptionButton(5, "Tasks",this), 0, 0);
+		addW(new OptionButton(6, "Timer",this), 0, 0);
+		addW(new OptionButton(7, "Review",this), 0, 0);
 	}
 	
 	public void render(Graphics g) {
